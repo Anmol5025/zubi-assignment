@@ -1,0 +1,99 @@
+{
+  "images": [
+    {
+      "id": "friendly-elephant",
+      "filename": "friendly-elephant.svg",
+      "path": "/images/friendly-elephant.svg",
+      "title": "Friendly Elephant",
+      "description": "A cute gray elephant with big ears and a friendly smile. The elephant has a long trunk and kind eyes.",
+      "category": "animals",
+      "ageAppropriate": "3-8 years",
+      "conversationTopics": [
+        "What do elephants eat?",
+        "Where do elephants live?",
+        "What sounds do elephants make?",
+        "How do elephants use their trunks?",
+        "What color is the elephant?"
+      ],
+      "detectedObjects": ["elephant", "trunk", "ears", "eyes", "smile"],
+      "colors": ["gray", "dark gray"],
+      "mood": "friendly, gentle"
+    },
+    {
+      "id": "sunny-garden",
+      "filename": "sunny-garden.svg",
+      "path": "/images/sunny-garden.svg",
+      "title": "Sunny Garden",
+      "description": "A beautiful garden scene with a bright yellow sun in a blue sky, green grass, and colorful flowers including pink, red, and purple blooms.",
+      "category": "nature",
+      "ageAppropriate": "3-8 years",
+      "conversationTopics": [
+        "What colors are the flowers?",
+        "What does the sun do for plants?",
+        "What grows in a garden?",
+        "What's your favorite flower color?",
+        "What do flowers need to grow?"
+      ],
+      "detectedObjects": ["sun", "sky", "grass", "flowers", "stems"],
+      "colors": ["blue", "yellow", "green", "pink", "red", "purple"],
+      "mood": "cheerful, bright, peaceful"
+    },
+    {
+      "id": "toy-train",
+      "filename": "toy-train.svg",
+      "path": "/images/toy-train.svg",
+      "title": "Colorful Toy Train",
+      "description": "A cheerful toy train with a red engine, blue windows, a smokestack, and a turquoise cargo car. The train has black wheels and runs on brown tracks.",
+      "category": "toys",
+      "ageAppropriate": "3-8 years",
+      "conversationTopics": [
+        "What color is the train engine?",
+        "Where do trains go?",
+        "What sound does a train make?",
+        "What can trains carry?",
+        "Have you ever been on a train?"
+      ],
+      "detectedObjects": ["train", "engine", "cargo car", "wheels", "tracks", "chimney", "windows"],
+      "colors": ["red", "turquoise", "blue", "black", "brown", "gray"],
+      "mood": "playful, adventurous"
+    },
+    {
+      "id": "ocean-scene",
+      "filename": "ocean-scene.svg",
+      "path": "/images/ocean-scene.svg",
+      "title": "Underwater Ocean Scene",
+      "description": "An underwater ocean scene with blue water, colorful fish swimming (orange and pink), bubbles floating up, and green seaweed growing from the bottom.",
+      "category": "nature",
+      "ageAppropriate": "3-8 years",
+      "conversationTopics": [
+        "What animals live in the ocean?",
+        "What colors are the fish?",
+        "What are the bubbles doing?",
+        "What is seaweed?",
+        "Have you ever been to the ocean?"
+      ],
+      "detectedObjects": ["water", "fish", "bubbles", "seaweed", "waves"],
+      "colors": ["blue", "orange", "pink", "green", "white"],
+      "mood": "calm, peaceful, curious"
+    },
+    {
+      "id": "rainbow-sky",
+      "filename": "rainbow-sky.svg",
+      "path": "/images/rainbow-sky.svg",
+      "title": "Rainbow in the Sky",
+      "description": "A beautiful rainbow arching across a blue sky with white fluffy clouds and green grass below. The rainbow has all seven colors: red, orange, yellow, green, blue, indigo, and violet.",
+      "category": "nature",
+      "ageAppropriate": "3-8 years",
+      "conversationTopics": [
+        "How many colors are in the rainbow?",
+        "What colors can you see?",
+        "When do we see rainbows?",
+        "What shapes are the clouds?",
+        "What's your favorite rainbow color?"
+      ],
+      "detectedObjects": ["rainbow", "sky", "clouds", "grass"],
+      "colors": ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "white"],
+      "mood": "magical, joyful, wonder"
+    }
+  ]
+}

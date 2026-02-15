@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Sunny Garden Scene -->
+  <!-- Sky -->
+  <rect width="200" height="120" fill="#87CEEB"/>
+  <!-- Sun -->
+  <circle cx="160" cy="40" r="20" fill="#FFD700"/>
+  <line x1="160" y1="15" x2="160" y2="5" stroke="#FFD700" stroke-width="2"/>
+  <line x1="160" y1="65" x2="160" y2="75" stroke="#FFD700" stroke-width="2"/>
+  <line x1="135" y1="40" x2="125" y2="40" stroke="#FFD700" stroke-width="2"/>
+  <line x1="185" y1="40" x2="195" y2="40" stroke="#FFD700" stroke-width="2"/>
+  <!-- Ground -->
+  <rect y="120" width="200" height="80" fill="#90EE90"/>
+  <!-- Flowers -->
+  <circle cx="40" cy="140" r="8" fill="#FF69B4"/>
+  <rect x="38" y="140" width="4" height="20" fill="#228B22"/>
+  <circle cx="80" cy="145" r="8" fill="#FF6347"/>
+  <rect x="78" y="145" width="4" height="20" fill="#228B22"/>
+  <circle cx="120" cy="140" r="8" fill="#9370DB"/>
+  <rect x="118" y="140" width="4" height="20" fill="#228B22"/>
+</svg>

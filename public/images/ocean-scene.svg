@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Ocean Scene with Fish -->
+  <!-- Water -->
+  <rect width="200" height="200" fill="#4A90E2"/>
+  <!-- Waves -->
+  <path d="M 0 30 Q 25 20 50 30 T 100 30 T 150 30 T 200 30" fill="#5BA3F5" opacity="0.5"/>
+  <path d="M 0 50 Q 25 40 50 50 T 100 50 T 150 50 T 200 50" fill="#6CB6FF" opacity="0.5"/>
+  <!-- Fish 1 -->
+  <ellipse cx="60" cy="80" rx="20" ry="12" fill="#FFA500"/>
+  <polygon points="40,80 30,75 30,85" fill="#FFA500"/>
+  <circle cx="75" cy="77" r="3" fill="#000"/>
+  <!-- Fish 2 -->
+  <ellipse cx="130" cy="120" rx="18" ry="10" fill="#FF69B4"/>
+  <polygon points="112,120 102,116 102,124" fill="#FF69B4"/>
+  <circle cx="143" cy="118" r="2" fill="#000"/>
+  <!-- Bubbles -->
+  <circle cx="90" cy="60" r="4" fill="#FFF" opacity="0.6"/>
+  <circle cx="100" cy="50" r="3" fill="#FFF" opacity="0.6"/>
+  <circle cx="150" cy="90" r="5" fill="#FFF" opacity="0.6"/>
+  <!-- Seaweed -->
+  <path d="M 30 200 Q 35 170 30 140 Q 25 110 30 80" stroke="#2E7D32" stroke-width="3" fill="none"/>
+  <path d="M 170 200 Q 175 170 170 140 Q 165 110 170 80" stroke="#2E7D32" stroke-width="3" fill="none"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Colorful Toy Train -->
+  <!-- Engine -->
+  <rect x="40" y="80" width="50" height="40" fill="#FF6B6B" rx="5"/>
+  <rect x="45" y="85" width="20" height="15" fill="#87CEEB"/>
+  <!-- Chimney -->
+  <rect x="70" y="65" width="10" height="15" fill="#4A4A4A"/>
+  <ellipse cx="75" cy="62" rx="8" ry="5" fill="#808080"/>
+  <!-- Cargo Car -->
+  <rect x="100" y="85" width="50" height="35" fill="#4ECDC4" rx="5"/>
+  <rect x="105" y="90" width="40" height="20" fill="#95E1D3"/>
+  <!-- Wheels -->
+  <circle cx="55" cy="125" r="8" fill="#2C3E50"/>
+  <circle cx="75" cy="125" r="8" fill="#2C3E50"/>
+  <circle cx="115" cy="125" r="8" fill="#2C3E50"/>
+  <circle cx="135" cy="125" r="8" fill="#2C3E50"/>
+  <!-- Track -->
+  <line x1="20" y1="140" x2="180" y2="140" stroke="#8B4513" stroke-width="3"/>
+  <line x1="20" y1="145" x2="180" y2="145" stroke="#8B4513" stroke-width="3"/>
+</svg>

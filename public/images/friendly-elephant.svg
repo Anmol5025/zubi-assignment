@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Friendly Elephant -->
+  <circle cx="100" cy="100" r="40" fill="#9CA3AF"/>
+  <ellipse cx="70" cy="90" rx="15" ry="25" fill="#9CA3AF"/>
+  <ellipse cx="130" cy="90" rx="15" ry="25" fill="#9CA3AF"/>
+  <ellipse cx="100" cy="130" rx="30" ry="20" fill="#9CA3AF"/>
+  <path d="M 100 130 Q 100 160 90 170" stroke="#6B7280" stroke-width="4" fill="none"/>
+  <circle cx="90" cy="95" r="5" fill="#1F2937"/>
+  <circle cx="110" cy="95" r="5" fill="#1F2937"/>
+  <path d="M 95 105 Q 100 110 105 105" stroke="#1F2937" stroke-width="2" fill="none"/>
+</svg>
