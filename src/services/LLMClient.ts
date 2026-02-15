@@ -1,13 +1,3 @@
-/**
- * LLM Client for OpenAI integration
- * 
- * Handles conversation with AI including function calling, streaming responses,
- * and retry logic for transient failures. Manages system prompts and image context
- * for child-appropriate conversations.
- * 
- * Requirements: 2.1, 2.2, 2.3, 2.4, 7.1, 7.2, 7.3, 7.4, 7.5, 10.2
- */
-
 import OpenAI from 'openai';
 import type { ChatCompletionMessageParam, ChatCompletionTool } from 'openai/resources/chat/completions';
 import type { LLMConfig } from '../types/config';
@@ -27,24 +17,6 @@ export class LLMClient {
   /**
    * Initialize the LLM client with configuration
    * 
-   * Sets up the OpenAI client with the provided API key and configuration.
-   * Creates the base system prompt for child-appropriate conversations.
-   * 
-   * @param config - LLM configuration including provider, API key, model, and parameters
-   * @throws Error if provider is not supported or API key is missing
-   * 
-   * @example
-   * ```typescript
-   * const client = new LLMClient();
-   * client.initialize({
-   *   provider: 'openai',
-   *   apiKey: process.env.OPENAI_API_KEY,
-   *   model: 'gpt-4',
-   *   temperature: 0.7,
-   *   maxTokens: 150
-   * });
-   * ```
-   */
   initialize(config: LLMConfig): void {
     if (config.provider !== 'openai') {
       const error = new Error(`Provider ${config.provider} not supported. Only 'openai' is currently supported.`);

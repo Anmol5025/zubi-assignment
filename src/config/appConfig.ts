@@ -1,19 +1,5 @@
-/**
- * Application Configuration
- * 
- * Centralizes all configuration settings for the AI conversation application.
- * Loads environment variables and provides typed configuration objects.
- * 
- * Requirements: 2.1, 4.1, 5.1
- */
-
 import type { LLMConfig, TTSConfig, ConversationConfig } from '../types/config';
 import { getApiKey, getEnv } from '../utils/env';
-
-/**
- * LLM Configuration
- * Configures the language model settings for AI conversation generation
- */
 export const llmConfig: LLMConfig = {
   provider: 'openai',
   model: getEnv('VITE_OPENAI_MODEL', 'gpt-4'),
@@ -23,10 +9,6 @@ export const llmConfig: LLMConfig = {
   baseUrl: getEnv('VITE_OPENAI_BASE_URL'),
 };
 
-/**
- * Text-to-Speech Configuration
- * Configures voice synthesis settings for AI responses
- */
 export const ttsConfig: TTSConfig = {
   voice: getEnv('VITE_TTS_VOICE', 'en-US'),
   rate: parseFloat(getEnv('VITE_TTS_RATE', '1.0')),
@@ -34,10 +16,6 @@ export const ttsConfig: TTSConfig = {
   volume: parseFloat(getEnv('VITE_TTS_VOLUME', '1.0')),
 };
 
-/**
- * Conversation Configuration
- * Configures conversation duration and timing thresholds
- */
 export const conversationConfig: ConversationConfig = {
   durationSeconds: parseInt(
     getEnv('VITE_CONVERSATION_DURATION_SECONDS', '60'),
@@ -50,35 +28,21 @@ export const conversationConfig: ConversationConfig = {
     : undefined,
 };
 
-/**
- * Timing Thresholds
- * Defines timing constraints for conversation management
- */
 export const timingConfig = {
-  /** Time in seconds when AI should start wrapping up the conversation */
   wrapUpThresholdSeconds: parseInt(
     getEnv('VITE_WRAP_UP_THRESHOLD_SECONDS', '50'),
     10
   ),
-  /** Maximum time in seconds for conversation duration */
   maxDurationSeconds: parseInt(
     getEnv('VITE_CONVERSATION_DURATION_SECONDS', '60'),
     10
   ),
-  /** Maximum time in milliseconds for AI response generation (Requirement 9.2) */
   aiResponseTimeoutMs: 2000,
-  /** Maximum time in milliseconds for tool execution (Requirement 6.2) */
   toolExecutionTimeoutMs: 500,
-  /** Maximum time in milliseconds before processing should start (Requirement 9.1) */
   processingStartTimeoutMs: 500,
-  /** Maximum time in seconds for conversation initiation (Requirement 2.1) */
   conversationInitTimeoutSeconds: 2,
 };
 
-/**
- * Validates that required configuration values are present
- * @throws Error if required configuration is missing
- */
 export function validateConfig(): void {
   const errors: string[] = [];
 
@@ -119,9 +83,6 @@ export function validateConfig(): void {
   }
 }
 
-/**
- * Export all configuration objects
- */
 export const appConfig = {
   llm: llmConfig,
   tts: ttsConfig,
