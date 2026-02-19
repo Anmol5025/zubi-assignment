@@ -29,7 +29,7 @@ import { SessionStateManager } from '../services/SessionStateManager';
 import { NetworkMonitor } from '../services/NetworkMonitor';
 import { registerVisualEffectTools } from '../services/registerVisualEffectTools';
 import type { VisualEffect } from '../types/ui';
-import { getApiKey } from '../utils/env';
+import { getApiKey, getEnv } from '../utils/env';
 import { MicrophonePermissionHandler } from '../services/MicrophonePermissionHandler';
 
 export interface UIControllerProps {
@@ -96,12 +96,14 @@ const UIControllerContent: React.FC<UIControllerProps> = ({
   const getUserFriendlyErrorMessage = (error: string): string => {
     const lowerError = error.toLowerCase();
     
+    console.log('[UIController] Processing error:', error);
+    
     if (lowerError.includes('api key') || lowerError.includes('unauthorized') || lowerError.includes('401')) {
-      return 'Unable to connect to AI service. Please check your API key configuration.';
+      return 'Unable to connect to AI service. Please check your API key in the .env file.';
     }
     
     if (lowerError.includes('network') || lowerError.includes('fetch') || lowerError.includes('econnrefused')) {
-      return 'Network connection issue. Please check your internet connection and try again.';
+      return 'Network connection issue. Please check your internet connection.';
     }
     
     if (lowerError.includes('timeout')) {
@@ -120,7 +122,8 @@ const UIControllerContent: React.FC<UIControllerProps> = ({
       return error; // Microphone errors are already user-friendly
     }
     
-    return 'An unexpected error occurred. Please try again.';
+    // Return the actual error for debugging
+    return `Error: ${error}`;
   };
 
   /**
@@ -175,7 +178,7 @@ const UIControllerContent: React.FC<UIControllerProps> = ({
 
         llmClient.initialize({
           provider: conversationConfig.llmProvider,
-          model: 'gpt-4',
+          model: getEnv('VITE_OPENAI_MODEL', 'gpt-4o-mini'),
           apiKey,
           temperature: 0.8,
           maxTokens: 150,
@@ -292,6 +295,11 @@ const UIControllerContent: React.FC<UIControllerProps> = ({
         
         const errorMessage = error instanceof Error ? error.message : 'Failed to initialize conversation';
         console.error('[UIController] Initialization error:', error);
+        console.error('[UIController] Error details:', {
+          message: errorMessage,
+          apiKeyPresent: !!getApiKey(),
+          model: getEnv('VITE_OPENAI_MODEL', 'gpt-4o-mini')
+        });
         
         // Requirements: 10.2 (display user-friendly error notifications)
         const friendlyMessage = getUserFriendlyErrorMessage(errorMessage);

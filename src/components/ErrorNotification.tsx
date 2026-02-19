@@ -24,7 +24,7 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
 }) => {
   return (
     <div
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-[calc(100%-2rem)] sm:w-full mx-2 sm:mx-4"
+      className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-[calc(100%-2rem)] sm:w-full mx-2 sm:mx-4"
       role="alert"
       aria-live="assertive"
     >
