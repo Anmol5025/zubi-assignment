@@ -4,7 +4,8 @@
  * Tests for the centralized error logging utility
  */
 
-import { ErrorLogger, getErrorLogger, logError, ErrorType } from './errorLogger';
+import type { ErrorType } from './errorLogger';
+import { ErrorLogger, getErrorLogger, logError } from './errorLogger';
 import * as fc from 'fast-check';
 
 describe('ErrorLogger', () => {

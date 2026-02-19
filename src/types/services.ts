@@ -2,8 +2,8 @@
  * Service interface definitions for LLM, STT, and TTS
  */
 
-import { Message, ToolCall } from './message';
-import { LLMConfig, STTConfig, TTSConfig } from './config';
+import type { Message, ToolCall } from './message';
+import type { LLMConfig, STTConfig, TTSConfig } from './config';
 
 // LLM Client interfaces
 export interface Tool {

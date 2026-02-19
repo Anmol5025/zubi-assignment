@@ -197,7 +197,7 @@ describe('Property-Based Tests', () => {
             // Check at multiple points during the session
             const checkPoints = [0.25, 0.5, 0.75, 1.0]; // 25%, 50%, 75%, 100% of session
             
-            for (const checkpoint of checkPoints) {
+            for (const _checkpoint of checkPoints) {
               // Simulate time passing (in real app, this would be actual time)
               await new Promise(resolve => setTimeout(resolve, 10));
               

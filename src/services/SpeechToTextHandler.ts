@@ -5,6 +5,8 @@
  * Validates Requirements 3.1, 3.4
  */
 
+/// <reference path="../types/webSpeechAPI.d.ts" />
+
 import type { SpeechToTextHandler as ISpeechToTextHandler, TranscriptResult } from '../types/services';
 import type { STTConfig } from '../types/config';
 import { logError } from '../utils/errorLogger';

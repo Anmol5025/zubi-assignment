@@ -17,6 +17,8 @@ export class LLMClient {
   /**
    * Initialize the LLM client with configuration
    * 
+   * @param config - LLM configuration including provider, model, API key, etc.
+   */
   initialize(config: LLMConfig): void {
     if (config.provider !== 'openai') {
       const error = new Error(`Provider ${config.provider} not supported. Only 'openai' is currently supported.`);
@@ -34,10 +36,9 @@ export class LLMClient {
     this.client = new OpenAI({
       apiKey: config.apiKey,
       baseURL: config.baseUrl,
-      dangerouslyAllowBrowser: true, // Required for browser usage
+      dangerouslyAllowBrowser: true,
     });
 
-    // Set child-appropriate system prompt
     this.systemPrompt = this.createChildAppropriateSystemPrompt();
   }
 

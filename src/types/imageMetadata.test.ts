@@ -1,8 +1,8 @@
+import type { ImageMetadataCollection } from './imageMetadata';
 import {
   getRandomImage,
   getImageById,
   getImagesByCategory,
-  ImageMetadataCollection,
 } from './imageMetadata';
 
 describe('Image Metadata Utilities', () => {

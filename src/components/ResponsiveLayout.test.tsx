@@ -255,12 +255,6 @@ describe('Responsive Layout Tests - Requirements 8.3', () => {
             const className = element.getAttribute('class') || '';
             
             // Elements should either have width: 100% or max-width constraints
-            const hasWidthConstraint = 
-              className.includes('w-full') ||
-              className.includes('max-w-') ||
-              className.includes('w-[') ||
-              style.width === '100%' ||
-              style.maxWidth !== 'none';
             
             // This is a soft check - not all elements need width constraints
             // but major containers should have them
@@ -396,18 +390,18 @@ describe('Property-Based Tests', () => {
 
               // Root element should not have fixed width that exceeds viewport
               const computedStyle = window.getComputedStyle(rootElement);
-              const hasWidthConstraint = 
-                rootElement.className.includes('w-full') ||
-                rootElement.className.includes('max-w-') ||
-                rootElement.className.includes('w-[') ||
-                computedStyle.maxWidth !== 'none' ||
-                computedStyle.width === '100%';
 
               // For container elements, verify width constraints exist
               if (rootElement.tagName === 'DIV' && 
                   (rootElement.className.includes('container') || 
                    rootElement.className.includes('wrapper') ||
                    name === 'ErrorNotification')) {
+                const hasWidthConstraint = 
+                  rootElement.className.includes('w-full') ||
+                  rootElement.className.includes('max-w-') ||
+                  rootElement.className.includes('w-[') ||
+                  computedStyle.maxWidth !== 'none' ||
+                  computedStyle.width === '100%';
                 expect(hasWidthConstraint).toBe(true);
               }
 

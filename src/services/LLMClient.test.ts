@@ -950,7 +950,7 @@ describe('LLMClient', () => {
             async ({ errorType, userMessage }) => {
               // Reset mocks and timers for each iteration
               jest.clearAllMocks();
-              jest.useRealTimers();
+              jest.useFakeTimers();
               
               // Initialize client (reuse the existing one to avoid mock issues)
               client.initialize(validConfig);
@@ -982,16 +982,15 @@ describe('LLMClient', () => {
               let caughtError: Error | null = null;
               
               try {
-                // Use fake timers to control retry timing
-                jest.useFakeTimers();
                 const promise = client.sendMessage(messages, []);
+                const result = promise.catch(e => e);
                 
                 // Run all timers to allow retries
                 await jest.runAllTimersAsync();
-                await promise;
-                jest.useRealTimers();
+                caughtError = await result;
               } catch (err) {
                 caughtError = err as Error;
+              } finally {
                 jest.useRealTimers();
               }
               
@@ -1026,7 +1025,7 @@ describe('LLMClient', () => {
             async (errorMessage) => {
               // Reset mocks and timers for each iteration
               jest.clearAllMocks();
-              jest.useRealTimers();
+              jest.useFakeTimers();
               
               // Initialize client (reuse the existing one)
               client.initialize(validConfig);
@@ -1041,13 +1040,13 @@ describe('LLMClient', () => {
               let caughtError: Error | null = null;
               
               try {
-                jest.useFakeTimers();
                 const promise = client.sendMessage(messages, []);
+                const result = promise.catch(e => e);
                 await jest.runAllTimersAsync();
-                await promise;
-                jest.useRealTimers();
+                caughtError = await result;
               } catch (err) {
                 caughtError = err as Error;
+              } finally {
                 jest.useRealTimers();
               }
               

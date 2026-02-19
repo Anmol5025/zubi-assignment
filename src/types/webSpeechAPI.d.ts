@@ -1,8 +1,11 @@
 /**
  * Type definitions for Web Speech API
+ * These are ambient declarations that extend the global Window interface
  */
 
-interface SpeechRecognition extends EventTarget {
+// Declare global types for Web Speech API
+declare global {
+  interface SpeechRecognition extends EventTarget {
   lang: string;
   continuous: boolean;
   interimResults: boolean;
@@ -125,3 +128,7 @@ declare var SpeechSynthesisUtterance: {
   prototype: SpeechSynthesisUtterance;
   new(text?: string): SpeechSynthesisUtterance;
 };
+}
+
+// Export empty object to make this a module
+export {};
